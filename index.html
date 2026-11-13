@@ -18,9 +18,9 @@
       --text-main: #E5E7EB;
       --text-muted: #9CA3AF;
       --text-heading: #FFFFFF;
-      --accent-indigo: #6366f1;
-      --accent-orange: #f97316;
-      --accent-gradient: linear-gradient(135deg, #6366f1, #f97316);
+      --btn-solid: #FFFFFF;
+      --btn-solid-text: #070709;
+      --icon-tint: #C7D2FE;
     }
 
     * {
@@ -60,47 +60,44 @@
     .site-wrapper {
       position: relative;
       z-index: 1;
-      max-width: 1000px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 30px 24px 80px 24px;
     }
 
-    /* Navigation */
+    /* Top Navigation (No pill shapes) */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 28px;
+      padding: 16px 24px;
       background: var(--paper);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border: 1px solid var(--paper-border);
-      border-radius: 999px;
-      margin-bottom: 60px;
+      border-radius: 12px;
+      margin-bottom: 64px;
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
       text-decoration: none;
       color: #FFFFFF;
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 800;
-      font-size: 20px;
+      font-size: 19px;
       letter-spacing: -0.5px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
     }
 
     .nav-link {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 500;
       transition: color 0.2s ease;
     }
@@ -108,46 +105,25 @@
       color: #FFFFFF;
     }
 
-    .btn-nav-download {
-      background: var(--accent-gradient);
-      color: #FFFFFF;
+    /* Solid Nav Button (No gradients, no pills) */
+    .btn-nav-play {
+      background: var(--btn-solid);
+      color: var(--btn-solid-text);
       text-decoration: none;
-      padding: 8px 20px;
-      border-radius: 999px;
-      font-size: 13.5px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
       font-weight: 600;
-      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: background-color 0.2s ease;
     }
-    .btn-nav-download:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 24px rgba(249, 115, 22, 0.4);
+    .btn-nav-play:hover {
+      background: #E5E7EB;
     }
 
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 40px 20px 60px 20px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #E0E7FF;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 6px 16px;
-      border-radius: 999px;
-      margin-bottom: 24px;
-    }
-    .hero-badge span.dot {
-      width: 6px;
-      height: 6px;
-      background: var(--accent-orange);
-      border-radius: 50%;
+      padding: 40px 20px 50px 20px;
     }
 
     h1 {
@@ -166,39 +142,40 @@
     .hero p {
       font-size: 18px;
       color: var(--text-muted);
-      max-width: 620px;
+      max-width: 600px;
       margin: 0 auto 36px auto;
       line-height: 1.6;
     }
 
-    /* Download CTA Buttons */
+    /* Solid CTA Buttons (No gradients, no pills) */
     .cta-group {
       display: flex;
       justify-content: center;
-      gap: 16px;
+      align-items: center;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
-    .btn-primary-download {
+    .btn-playstore {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: var(--accent-gradient);
-      color: #FFFFFF;
+      background: var(--btn-solid);
+      color: var(--btn-solid-text);
       text-decoration: none;
-      padding: 16px 36px;
-      border-radius: 999px;
+      padding: 14px 28px;
+      border-radius: 10px;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
-      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
-      transition: all 0.2s ease;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.2s ease, transform 0.15s ease;
     }
-    .btn-primary-download:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 40px rgba(249, 115, 22, 0.5);
+    .btn-playstore:hover {
+      background: #E5E7EB;
+      transform: translateY(-1px);
     }
-    .btn-primary-download svg {
+    .btn-playstore svg {
       width: 20px;
       height: 20px;
       fill: currentColor;
@@ -212,31 +189,32 @@
       border: 1px solid var(--paper-border);
       color: #FFFFFF;
       text-decoration: none;
-      padding: 16px 28px;
-      border-radius: 999px;
+      padding: 14px 24px;
+      border-radius: 10px;
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 15px;
       font-weight: 600;
       backdrop-filter: blur(12px);
-      transition: all 0.2s ease;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
     }
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 255, 255, 0.16);
     }
 
-    /* Feature Grid */
+    /* Feature Grid (Clean monochrome SVG icons, zero emojis) */
     .features-section {
-      margin-top: 60px;
+      margin-top: 64px;
     }
 
     .section-title {
       text-align: center;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 700;
       color: #FFFFFF;
-      margin-bottom: 36px;
+      margin-bottom: 32px;
+      letter-spacing: -0.4px;
     }
 
     .grid {
@@ -250,25 +228,39 @@
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border: 1px solid var(--paper-border);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      border-radius: 14px;
+      padding: 28px;
+      transition: border-color 0.2s ease;
     }
     .card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.16);
     }
 
-    .card-icon {
-      font-size: 28px;
-      margin-bottom: 14px;
-      display: inline-block;
+    .card-icon-box {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      color: var(--icon-tint);
+    }
+    .card-icon-box svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .card h3 {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       color: #FFFFFF;
       margin-bottom: 8px;
@@ -280,27 +272,29 @@
       line-height: 1.6;
     }
 
-    /* Download Box */
+    /* Solid Callout Banner (No gradients) */
     .download-banner {
       margin-top: 80px;
-      background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, rgba(18, 18, 23, 0.8) 100%);
+      background: var(--paper);
       border: 1px solid var(--paper-border);
-      border-radius: 24px;
-      padding: 50px 30px;
+      border-radius: 16px;
+      padding: 48px 32px;
       text-align: center;
       backdrop-filter: blur(20px);
     }
     .download-banner h2 {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 32px;
-      font-weight: 800;
+      font-size: 28px;
+      font-weight: 700;
       color: #FFFFFF;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      letter-spacing: -0.4px;
     }
     .download-banner p {
       color: var(--text-muted);
-      max-width: 500px;
-      margin: 0 auto 30px auto;
+      max-width: 480px;
+      margin: 0 auto 28px auto;
+      font-size: 15px;
     }
 
     /* Footer */
@@ -347,95 +341,134 @@
       <div class="nav-links">
         <a href="#features" class="nav-link">Features</a>
         <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
-        <!-- NAV DOWNLOAD BUTTON (Paste your link below in href) -->
-        <a href="#download" class="btn-nav-download">Download</a>
+        <!-- NAV PLAY STORE BUTTON (No gradient, no pill) -->
+        <!-- PASTE YOUR GOOGLE PLAY STORE LINK IN THE HREF BELOW -->
+        <a href="https://play.google.com/store/apps/details?id=com.bunbun.app" class="btn-nav-play" target="_blank" rel="noopener">Google Play</a>
       </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Zero status pills) -->
     <section class="hero">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        100% Free &bull; Zero Ads &bull; Pure On-Device Privacy
-      </div>
       <h1>Master your focus.<br>End doomscrolling.</h1>
       <p>
-        BunBun is an all-in-one on-device companion combining intelligent reel blocking, strict app shielding, a live reel counter, focus timers, and lightning-fast burrow notes.
+        BunBun is an on-device companion combining intelligent reel blocking, strict app shielding, a live reel counter, focus timers, and quick burrow notes.
       </p>
       
       <div class="cta-group">
         <!-- ============================================================== -->
-        <!-- MAIN DOWNLOAD BUTTON: PASTE YOUR GOOGLE DRIVE / GITHUB / APK LINK HERE -->
+        <!-- MAIN GOOGLE PLAY STORE BUTTON: PASTE YOUR PLAY STORE LINK HERE -->
         <!-- ============================================================== -->
-        <a href="https://github.com/imanshu7/bunbun/releases/download/v1.0.0/BunBun-Release.apk" class="btn-primary-download" id="main-download-button" target="_blank" rel="noopener">
+        <a href="https://play.google.com/store/apps/details?id=com.bunbun.app" class="btn-playstore" id="main-playstore-btn" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24">
-            <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a1.99 1.99 0 0 1-.61-.912c-.22-.68-.22-1.46-.22-2.31V5.036c0-.85 0-1.63.22-2.31.14-.43.36-.75.61-.912zm1.414-.644l10.184 5.88-2.793 2.793-7.391-8.673zm0 21.66l7.391-8.673 2.793 2.793-10.184 5.88zm11.598-7.247l2.88-1.663c1.03-.596 1.03-1.564 0-2.16l-2.88-1.663-2.02 2.02 2.02 2.02z"/>
           </svg>
-          Download BunBun APK
+          Get it on Google Play
         </a>
         
         <a href="privacy-policy.html" class="btn-secondary">
-          Privacy Policy &rarr;
+          Privacy Policy
         </a>
       </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features Section (Clean SVG line icons, zero emojis) -->
     <section class="features-section" id="features">
-      <h2 class="section-title">Everything you need to stay in flow</h2>
+      <h2 class="section-title">Core Capabilities</h2>
       
       <div class="grid">
+        <!-- Feature 1: Reel Blocker -->
         <div class="card">
-          <span class="card-icon">🛡️</span>
-          <h3>Reel & Shorts Blocker</h3>
-          <p>Instantly deflects Instagram Reels and YouTube Shorts feeds. Stop infinite scrolling habits before they steal your hours.</p>
+          <div class="card-icon-box">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="4"/>
+              <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+              <line x1="2" y1="2" x2="22" y2="22"/>
+            </svg>
+          </div>
+          <h3>Reel &amp; Shorts Blocker</h3>
+          <p>Instantly deflects Instagram Reels and YouTube Shorts feeds. Stops mindless scrolling habits before they start.</p>
         </div>
 
+        <!-- Feature 2: Reel Counter -->
         <div class="card">
-          <span class="card-icon">🔢</span>
+          <div class="card-icon-box">
+            <svg viewBox="0 0 24 24">
+              <line x1="4" y1="9" x2="20" y2="9"/>
+              <line x1="4" y1="15" x2="20" y2="15"/>
+              <line x1="10" y1="3" x2="8" y2="21"/>
+              <line x1="16" y1="3" x2="14" y2="21"/>
+            </svg>
+          </div>
           <h3>Live Reel Counter</h3>
-          <p>Real-time awareness counter brings conscious visibility to repetitive swipe habits across social apps.</p>
+          <p>Real-time awareness counter brings conscious visibility to repetitive swipe habits across social platforms.</p>
         </div>
 
+        <!-- Feature 3: Focus Timer -->
         <div class="card">
-          <span class="card-icon">⏱️</span>
-          <h3>Focus Timer & Daily Goals</h3>
-          <p>Pomodoro intervals, custom slider timers, and ambient fullscreen mode designed for deep, uninterrupted work.</p>
+          <div class="card-icon-box">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="13" r="8"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="13" x2="15" y2="15"/>
+              <line x1="10" y1="2" x2="14" y2="2"/>
+            </svg>
+          </div>
+          <h3>Focus Timer &amp; Daily Goals</h3>
+          <p>Pomodoro intervals, custom slider durations, and ambient fullscreen mode engineered for deep work flow states.</p>
         </div>
 
+        <!-- Feature 4: App Shield -->
         <div class="card">
-          <span class="card-icon">🔒</span>
+          <div class="card-icon-box">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
           <h3>Hard Shield App Blocker</h3>
-          <p>Lock down distracting apps during study and work sessions. Zero bypass temptations, fully configurable.</p>
+          <p>Lock down distracting apps during study and work sessions. Zero bypass temptations, fully on-device.</p>
         </div>
 
+        <!-- Feature 5: Burrow Notes -->
         <div class="card">
-          <span class="card-icon">📝</span>
-          <h3>Burrow Notes & Voice Memos</h3>
-          <p>Capture ideas instantly with clean markdown, checklists, and one-tap voice memos without switching apps.</p>
+          <div class="card-icon-box">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3>Burrow Notes &amp; Voice Memos</h3>
+          <p>Capture thoughts instantly with fast markdown, checklists, and one-tap voice memos without switching tasks.</p>
         </div>
 
+        <!-- Feature 6: Floating Overlay -->
         <div class="card">
-          <span class="card-icon">✨</span>
+          <div class="card-icon-box">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="14" height="14" rx="2"/>
+              <path d="M7 21h12a2 2 0 0 0 2-2V7"/>
+            </svg>
+          </div>
           <h3>Floating Assistant Overlay</h3>
-          <p>Multi-tool overlay with floating scratchpad, calculator, and mini timer accessible anywhere on your screen.</p>
+          <p>Multi-tool overlay with floating scratchpad, calculator, and mini timer accessible over any active screen.</p>
         </div>
       </div>
     </section>
 
-    <!-- Bottom Download Banner -->
+    <!-- Bottom Download Banner (Solid, zero gradient) -->
     <section class="download-banner" id="download">
-      <h2>Ready to take control of your time?</h2>
-      <p>Install BunBun on your Android phone today. 100% free with zero in-app purchases and zero tracking.</p>
+      <h2>Install BunBun on Android</h2>
+      <p>100% free with zero in-app purchases, zero ads, and complete on-device privacy.</p>
       
       <!-- ============================================================== -->
-      <!-- BOTTOM DOWNLOAD BUTTON: PASTE YOUR LINK HERE AS WELL -->
+      <!-- BOTTOM GOOGLE PLAY STORE BUTTON: PASTE YOUR PLAY STORE LINK HERE -->
       <!-- ============================================================== -->
-      <a href="https://github.com/imanshu7/bunbun/releases/download/v1.0.0/BunBun-Release.apk" class="btn-primary-download" target="_blank" rel="noopener">
+      <a href="https://play.google.com/store/apps/details?id=com.bunbun.app" class="btn-playstore" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24">
-          <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+          <path d="M3.609 1.814L13.792 12 3.61 22.186a1.99 1.99 0 0 1-.61-.912c-.22-.68-.22-1.46-.22-2.31V5.036c0-.85 0-1.63.22-2.31.14-.43.36-.75.61-.912zm1.414-.644l10.184 5.88-2.793 2.793-7.391-8.673zm0 21.66l7.391-8.673 2.793 2.793-10.184 5.88zm11.598-7.247l2.88-1.663c1.03-.596 1.03-1.564 0-2.16l-2.88-1.663-2.02 2.02 2.02 2.02z"/>
         </svg>
-        Download BunBun v1.0.0
+        Get it on Google Play
       </a>
     </section>
 
